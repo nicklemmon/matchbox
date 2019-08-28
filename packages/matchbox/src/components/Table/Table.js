@@ -11,6 +11,7 @@ class Table extends Component {
   static Row = Row;
 
   static propTypes = {
+    title: PropTypes.string.isRequired,
     data: PropTypes.array,
     /**
      * React node(s)
@@ -20,8 +21,9 @@ class Table extends Component {
 
   render() {
     const {
-      children,
-      data
+      title,
+      data,
+      children
     } = this.props;
 
     const dataMarkup = data
@@ -30,6 +32,8 @@ class Table extends Component {
 
     return (
       <table className={styles.Table}>
+        <caption>{title}</caption>
+
         {dataMarkup}
       </table>
     );

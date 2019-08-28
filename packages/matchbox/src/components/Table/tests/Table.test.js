@@ -11,12 +11,12 @@ describe('Table', () => {
       data: [['A', 'B', 'C'], [1, 2, 3]]
     };
 
-    wrapper = shallow(<Table {...props}/>);
+    wrapper = shallow(<Table title="My Data Table" {...props}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders children', () => {
-    wrapper = shallow(<Table>children test</Table>);
+    wrapper = shallow(<Table title="My Table with Children">children test</Table>);
     expect(wrapper).toMatchSnapshot();
   });
 
