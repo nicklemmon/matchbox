@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ScreenReaderOnly } from '../ScreenReaderOnly';
 import { Cell, HeaderCell, Row } from './TableElements';
 import styles from './Table.module.scss';
+
 
 class Table extends Component {
   static displayName = 'Table';
@@ -32,7 +34,9 @@ class Table extends Component {
 
     return (
       <table className={styles.Table}>
-        <caption>{title}</caption>
+        <caption>
+          <ScreenReaderOnly>{title}</ScreenReaderOnly>
+        </caption>
 
         {dataMarkup}
       </table>

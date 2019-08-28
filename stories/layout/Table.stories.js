@@ -14,11 +14,11 @@ const data = [
 
 storiesOf('Layout|Table', module)
   .addDecorator((getStory) => (
-    <StoryContainer>{ getStory() }</StoryContainer>
+    <StoryContainer>{getStory()}</StoryContainer>
   ))
-  .add('table components', withInfo({ propTablesExclude: [Panel] })(() => (
+  .add('table components', withInfo({ propTablesExclude: [Panel]})(() => (
     <Panel>
-      <Table>
+      <Table title="My Table">
         <tbody>
           <Table.Row>
             <Table.HeaderCell>Heading 1</Table.HeaderCell>
@@ -42,6 +42,6 @@ storiesOf('Layout|Table', module)
 
   .add('with supplied data', withInfo()(() => (
     <Panel>
-      <Table data={data} />
+      <Table title="My Table with Data" data={data} />
     </Panel>
   )));
