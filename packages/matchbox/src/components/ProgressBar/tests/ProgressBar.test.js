@@ -19,6 +19,13 @@ describe('ProgressBar', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('Has relevant WAI-ARIA attributes', () => {
+    expect(wrapper.find('[role="progressbar"]')).toExist();
+    expect(wrapper.find('[aria-valuenow]')).toExist();
+    expect(wrapper.find('[aria-valuemin]')).toExist();
+    expect(wrapper.find('[aria-valuemax]')).toExist();
+  });
+
   it('renders at 50% progress in navy color', () => {
     wrapper.setProps({ completed: 50, color: 'navy' });
     expect(wrapper).toMatchSnapshot();
