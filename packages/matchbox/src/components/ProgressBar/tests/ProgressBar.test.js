@@ -7,7 +7,12 @@ describe('ProgressBar', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<ProgressBar />);
+    wrapper = shallow(
+      <ProgressBar
+        id="my-progress-bar"
+        label="My Progress Bar"
+      />
+    );
   });
 
   it('renders progressbar at defaults', () => {
