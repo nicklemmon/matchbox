@@ -17,7 +17,6 @@ jobs:
       - name: Testing
         run: npm run test:ci
       - name: Upload artifacts
-      - name: Upload artifacts
         uses: actions/upload-artifact@v1
         if: failure()
         with:
